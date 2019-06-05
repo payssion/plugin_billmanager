@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+  <plugin name="pmpayssion">
+    <group>payment_method</group>
+    <author>Payssion Limited</author>
+    <msg name="desc_short" lang="ru">Payssion</msg>
+    <msg name="desc_short" lang="en">Payssion</msg>
+    <msg name="desc_full" lang="ru">Интеграция с Payssion</msg>
+    <msg name="desc_full" lang="en">Payssion integration</msg>
+    <msg name="price" lang="ru">Бесплатно</msg>
+    <msg name="price" lang="en">Free</msg>
+  </plugin>
+
+  <metadata name="paymethod.edit.payssion" type="form">
+    <form>
+      <page name="methodprops">
+        <field name="api_key">
+          <input type="text" name="api_key" required="yes"/>
+        </field>
+        <field name="secret_key">
+          <input type="text" name="secret_key" required="yes"/>
+        </field>
+      </page>
+    </form>
+  </metadata>
+
+  <lang name="en">
+    <messages name="plugin">
+      <msg name="desc_short_pmpayssion">Payssion</msg>
+      <msg name="desc_full_pmpayssion">Payssion</msg>
+      <msg name="price_pmpayssion">Free</msg>
+    </messages>
+    <messages name="label_paymethod">
+      <msg name="pmpayssion">Payssion</msg>
+      <msg name="module_pmpayssion">Payssion</msg>
+    </messages>
+    <messages name="paymethod.edit.payssion">
+      <msg name="api_key">API Key</msg>
+      <msg name="hint_api_key">API Key</msg>
+      <msg name="secret_key">Secret Key</msg>
+      <msg name="hint_secret_key">Secret Key</msg>
+    </messages>
+  </lang>
+
+  <lang name="ru">
+    <messages name="plugin">
+      <msg name="desc_short_pmpayssion">Payssion</msg>
+      <msg name="desc_full_pmpayssion">Payssion</msg>
+      <msg name="price_pmpayssion">Free</msg>
+    </messages>
+    <messages name="label_paymethod">
+      <msg name="pmpayssion">Payssion</msg>
+      <msg name="module_pmpayssion">Payssion</msg>
+    </messages>
+    <messages name="paymethod.edit.payssion">
+      <msg name="api_key">API Key</msg>
+      <msg name="hint_api_key">API Key</msg>
+      <msg name="secret_key">Secret Key</msg>
+      <msg name="hint_secret_key">Secret Key</msg>
+    </messages>
+  </lang>
+</mgrdata>

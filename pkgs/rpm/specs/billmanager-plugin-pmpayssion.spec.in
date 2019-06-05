@@ -1,0 +1,68 @@
+%define core_dir /usr/local/mgr5
+
+Name:                           billmanager-plugin-pmpayssion
+Version:                        %%VERSION%%
+Release:                        %%REL%%%{?dist}
+
+Summary:                        billmanager-plugin-pmpayssion package
+Group:                          System Environment/Daemons
+License:                        Commercial
+URL:                            http://ispsystem.com/
+
+
+BuildRequires:  coremanager-devel%{?_isa} >= %%COREVERSION%%
+BuildRequires:  billmanager-corporate-devel >= %{version}-%{release}
+
+Requires:       coremanager
+Requires:       billmanager-corporate >= %{version}-%{release}
+
+%description
+billmanager-plugin-pmpayssion
+
+%debug_package
+
+
+%build
+export LD_LIBRARY_PATH=".:./lib"
+export CFLAGS="$RPM_OPT_FLAGS"
+export CXXFLAGS="${CFLAGS}"
+make %{?_smp_mflags} NOEXTERNAL=yes RELEASE=yes 
+
+
+%install
+export LD_LIBRARY_PATH=".:./lib"
+export CFLAGS="$RPM_OPT_FLAGS"
+export LDFLAGS="-L%{core_dir}/lib"
+export CXXFLAGS="${CFLAGS}"
+rm -rf $RPM_BUILD_ROOT
+INSTALLDIR=%{buildroot}%{core_dir}
+mkdir -p $INSTALLDIR
+make %{?_smp_mflags} dist DISTDIR=$INSTALLDIR NOEXTERNAL=yes RELEASE=yes
+
+
+%check
+
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+. %{core_dir}/lib/pkgsh/core_pkg_funcs.sh
+ReloadMgr billmgr
+
+
+%postun
+if [ $1 -eq 0 ]; then
+. %{core_dir}/lib/pkgsh/core_pkg_funcs.sh
+ReloadMgr billmgr
+fi
+
+%files
+%defattr(-, root, root, -)
+%{core_dir}/libexec/pmpayssion.so
+%{core_dir}/libexec/payssionpayment.so
+%{core_dir}/libexec/payssionresult.so
+%{core_dir}/cgi/payssionpayment
+%{core_dir}/cgi/payssionresult
+%{core_dir}/paymethods/pmpayssion
+%{core_dir}/etc/xml/billmgr_mod_pmpayssion.xml
