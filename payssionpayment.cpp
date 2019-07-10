@@ -27,7 +27,7 @@ public:
 		payment_form_param["success_url"] = GetSuccessPage();
 		payment_form_param["fail_url"] = GetFailPage();
 		payment_form_param["api_key"] = Method("api_key");
-		payment_form_param["pm_id"] = "alipay_cn";
+		payment_form_param["pm_id"] = Method("name");
 		payment_form_param["order_id"] = Payment("id");
 		payment_form_param["currency"] = str::Upper(Currency("iso"));
 		payment_form_param["amount"] = Payment("amount");
