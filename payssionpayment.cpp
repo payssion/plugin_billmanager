@@ -54,7 +54,7 @@ public:
 						"	</script>\n"
 						"</head>\n"
 						"<body onload='DoSubmit()'>\n"
-						"	<form name='payssionform' action='http://sandbox.payssion.com/payment/create.html' target='_blank' method='post'>\n"
+						"	<form name='payssionform' action='https://www.payssion.com/payment/create.html' method='post'>\n"
 						"		<input type='hidden' name='api_sig' value='" + sign + "'>\n";
 
 		ForEachI(payment_form_param, p) {
