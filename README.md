@@ -6,7 +6,7 @@ This extension is for BillManager
 
 <h4>Installation</h4>
 
-1. Download and install with:
+Download and install with:
 ~~~~
 $ git clone https://github.com/payssion/plugin_billmanager.git
 $ cd plugin_billmanager
@@ -19,7 +19,7 @@ $ make install
 
  2. Fill in API Key and Secret Key which you can find at your Payssion account. Click `Next`.
  
- 2. Fill in `Name`, `Currency` and any other fields if needed. Click `Currency`. Click `Finish`.
+ 2. Fill in `Name` (Use the payment method name as the gateway name, for example `Alipay`, not `Payssion`), `Currency` and any other fields if needed. Click `Finish`.
  
- 3. Find the logo for the payment method at `https://github.com/payssion/payssion-payment-logos`, and upload the logo by editing the payment method. 
+ 3. Find the logo for the payment method at [payssion-payment-logos](https://github.com/payssion/payssion-payment-logos), and upload the logo by editing the payment method. 
  
